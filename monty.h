@@ -57,7 +57,7 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-int execute(char *buffer, stack_t **stack, unsigned int counter, FILE *file);
+void execute(char *buffer, stack_t **stack, unsigned int counter, FILE *file);
 void free_stack(stack_t *head);
 void _push(stack_t **head, unsigned int counter);
 void _pall(stack_t **head, unsigned int counter);

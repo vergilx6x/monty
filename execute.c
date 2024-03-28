@@ -9,7 +9,7 @@
 * Return: no return
 */
 
-int execute(char *buffer, stack_t **stack, unsigned int counter, FILE *file)
+void execute(char *buffer, stack_t **stack, unsigned int counter, FILE *file)
 {
 	instruction_t ops[] = {
 		{"push", _push}, {"pall", _pall},
@@ -22,14 +22,14 @@ int execute(char *buffer, stack_t **stack, unsigned int counter, FILE *file)
 
 	opcode = strtok(buffer, " \n\t");
 	if (opcode && opcode[0] == '#')
-		return (0);
+		return;
 	args.args = strtok(NULL, " \n\t");
 	while (ops[i].opcode && opcode)
 	{
 		if (strcmp(opcode, ops[i].opcode) == 0)
 		{
 			ops[i].f(stack, counter);
-			return (0);
+			return;
 		}
 		i++;
 	}
@@ -41,7 +41,7 @@ int execute(char *buffer, stack_t **stack, unsigned int counter, FILE *file)
 		free_stack(*stack);
 		exit(EXIT_FAILURE);
 	}
-	return (1);
+	return;
 }
 
 /**
