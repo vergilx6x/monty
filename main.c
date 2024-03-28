@@ -33,7 +33,7 @@ int main(int argc, char *argv[])
 	while (line_read > 0)
 	{
 		buffer = NULL;
-		line_read = my_getline(&buffer, &bytes, file);
+		line_read = getline(&buffer, &bytes, file);
 		args.buffer = buffer;
 		counter++;
 		if (line_read > 0)
