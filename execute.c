@@ -22,7 +22,7 @@ int execute(char *buffer, stack_t **stack, unsigned int counter, FILE *file)
 
 	opcode = strtok(buffer, " \n\t");
 	if (opcode && opcode[0] == '#')
-		return (0);
+		return;
 	args.args = strtok(NULL, " \n\t");
 	while (ops[i].opcode && opcode)
 	{
