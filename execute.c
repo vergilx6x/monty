@@ -31,7 +31,7 @@ int execute(char *buffer, stack_t **stack, unsigned int counter, FILE *file)
 		}
 		i++;
 	}
-	if (opcode && ops[i]. opcode == NULL)
+	if (opcode && ops[i].opcode == NULL)
 	{
 		fprintf(stderr, "L%d: unknown instruction %s\n", counter, opcode);
 		fclose(file);
