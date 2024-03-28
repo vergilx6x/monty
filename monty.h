@@ -64,6 +64,6 @@ void _addnode(stack_t **head, int n);
 ssize_t my_getline(char **lineptr, size_t *n, FILE *stream);
 void _pint(stack_t **head, unsigned int counter);
 void _pop(stack_t **head, unsigned int counter);
-void _swap(stack_t **head, unsigned int counter)
+void _swap(stack_t **head, unsigned int counter);
 
 #endif

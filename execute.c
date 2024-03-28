@@ -14,7 +14,7 @@ int execute(char *buffer, stack_t **stack, unsigned int counter, FILE *file)
 	instruction_t ops[] = {
 		{"push", _push}, {"pall", _pall},
 		{"pint", _pint}, {"pop", _pop},
-		{"swap", f_swap},
+		{"swap", _swap},
 		{NULL, NULL}
 	};
 	unsigned int i = 0;
