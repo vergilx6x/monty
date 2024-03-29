@@ -26,19 +26,19 @@ typedef struct stack_s
 } stack_t;
 
 /**
- * struct args_s - variables -args, file, line content
- * @args: value
- * @file: pointer to monty file
+ * struct args_s - args, file, line content, flag
+ * @args: opcode arguments
+ * @file: Pointer to monty file
  * @buffer: line content
- * @lifi: flag change stack <-> queue
- * Description: carries values through the program
+ * @queue_flag: Queue mode flag
+ * Description: Carries values through the program
  */
 typedef struct args_s
 {
 	char *args;
 	FILE *file;
 	char *buffer;
-	int lifi;
+	int queue_flag;
 }  args_s;
 
 extern args_s args;
@@ -74,5 +74,8 @@ void _mul(stack_t **head, unsigned int counter);
 void _mod(stack_t **head, unsigned int counter);
 void _pchar(stack_t **head, unsigned int counter);
 void _pstr(stack_t **head, unsigned int counter);
+void _stack(stack_t **head, unsigned int counter);
+void _queue(stack_t **head, unsigned int counter);
+void _addqueue(stack_t **head, int n);
 
 #endif

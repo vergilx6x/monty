@@ -60,7 +60,10 @@ void _push(stack_t **head, unsigned int counter)
 		exit(EXIT_FAILURE);
 	}
 	n = atoi(args.args);
-	_addnode(head, n);
+	if (args.queue_flag == 0)
+		_addnode(head, n);
+	else
+		_addqueue(head, n);
 }
 
 /**
