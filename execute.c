@@ -22,14 +22,14 @@ void execute(char *buffer, stack_t **stack, unsigned int counter, FILE *file)
 
 	opcode = strtok(buffer, " \n\t");
 	if (opcode && opcode[0] == '#')
-		return;
+		return (0);
 	args.args = strtok(NULL, " \n\t");
 	while (ops[i].opcode && opcode)
 	{
 		if (strcmp(opcode, ops[i].opcode) == 0)
 		{
 			ops[i].f(stack, counter);
-			return;
+			return (0);
 		}
 		i++;
 	}
@@ -41,7 +41,7 @@ void execute(char *buffer, stack_t **stack, unsigned int counter, FILE *file)
 		free_stack(*stack);
 		exit(EXIT_FAILURE);
 	}
-	return;
+	return (1);
 }
 
 /**
