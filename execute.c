@@ -15,6 +15,10 @@ int execute(char *buffer, stack_t **stack, unsigned int counter, FILE *file)
 		{"push", _push}, {"pall", _pall},
 		{"pint", _pint}, {"pop", _pop},
 		{"swap", _swap}, {"add", _add},
+		{"nop", _nop}, {"sub", _sub},
+		{"div", _div}, {"mul", _mul},
+		{"mod", _mod}, {"pchar", _pchar},
+		{"pstr", _pstr},
 		{NULL, NULL}
 	};
 	unsigned int i = 0;
